@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+{% endblock extra_css %}
+
+
+{% block body %}
+{% if HeadObj %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{HeadObj.bg_img.url}}');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread">Faculty</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                                class="ion-ios-arrow-forward"></i></a></span> <span>Faculty <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="ftco-section bg-light">
+    <div class="container-fluid px-8">
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <h2 class="mb-4">Experienced Teachers</h2>
+                <p>We have fully trained and experienced teachers who will help your child reach great heights of success both in Academics and in life.
+                    Our teachers will provide classroom teachings and career guide side by side to enhance the interest of students.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {% for obj in corporate_trainerObj %}
+            <div class="col-md-5 col-lg-3 ftco-animate" style="margin-left: 80px;">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img align-self-stretch" style="background-image: url({{obj.img.url}}); height:500px"></div>
+                    </div>
+                    <br><br><br><br>
+                    <div class="text pt-6 text-center">
+                        <h3>{{obj.trainer_name}}</h3>
+                        <span class="position mb-2">{{obj.trainer_designation}}</span>
+                        <div class="faded">
+                            <p>{{obj.content|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock body %}

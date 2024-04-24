@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static "css/timeline.css" %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+	.bullet-list {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.bullet-item {
+		margin-bottom: 15px;
+	}
+
+	.bullet-text {
+		cursor: pointer;
+		font-weight: bold;
+	}
+
+	.dropdown-content {
+		display: none;
+		padding: 5px;
+		border: 1px #ccc;
+		background-color: #f9f9f9;
+	}
+
+	.dropdown-content p {
+		margin: 0;
+	}
+
+	/* Show the dropdown content when the bullet text is clicked */
+	.bullet-text.active+.dropdown-content {
+		display: block;
+	}
+
+	.icon-container {
+		line-height: 0;
+	}
+
+	.icon-container i {
+		margin-right: 10px;
+		/* Adjust the space by changing the value */
+	}
+</style>
+{% endblock extra_css %}
+
+{% block body %}
+{% if HeadObj %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{HeadObj.bg_img.url}}');">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center">
+				<h1 class="mb-2 bread">About Us</h1>
+				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+								class="ion-ios-arrow-forward"></i></a></span> <span>About us <i
+							class="ion-ios-arrow-forward"></i></span></p>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+{% if StablishObj %}
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+	<div class="container">
+		<div class="row d-flex">
+			<div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
+				<div class="img" style="background-image: url({{StablishObj.img.url}}); border"></div>
+			</div>
+			<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
+				 <h2 class="mb-4">{{StablishObj.title}}</h2>
+				<p>{{StablishObj.content|safe}}</p> 
+				
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static "images/whyus.jpg" %});">
+	<div class="container">
+		<h1 class="card-title text-center" style="color: #ffff;">WHY CHOOSE US?</h1><br><br>
+		<div class="row">
+			{% if WhyUsObj %}
+			<div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-0 pt-md-0 pt-5"
+				style="justify-content:center;">
+				<h1 style="color: white; font-size: 35px;"><b>{{WhyUsObj.Column_title1}}</b><span
+						style="font-size: 50px; font-weight: bold;"><b>↓</b></span></h1>
+				<div id="accordion" class="accordion">
+					<div class="card" style="margin-left: -100px; width:650px;">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+									aria-expanded="true" aria-controls="collapseOne">
+									{{WhyUsObj.subtitle1}}
+								</button>
+							</h5>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content1}}
+							</div>
+						</div>
+					</div>
+					<div class="card" style="margin-left: -100px; width:650px;">
+						<div class="card-header" id="headingTwo">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse"
+									data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									{{WhyUsObj.subtitle2}}
+								</button>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content2}}
+							</div>
+						</div>
+					</div>
+					<div class="card" style="margin-left: -100px; width:650px;">
+						<div class="card-header" id="headingThree">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse"
+									data-target="#collapseThree" aria-expanded="false"
+									aria-controls="collapseThree">
+									{{WhyUsObj.subtitle3}}
+								</button>
+							</h5>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content3}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
+				<div id="accordion">
+					<div class="card" style="margin-left: -50px; width:650px;">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+									aria-expanded="true" aria-controls="collapseOne">
+									{{WhyUsObj.subtitle4}}
+								</button>
+							</h5>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content4}}
+							</div>
+						</div>
+					</div>
+					<div class="card" style="margin-left: -50px; width:650px;">
+						<div class="card-header" id="headingTwo">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse"
+									data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									{{WhyUsObj.subtitle5}}
+								</button>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content5}}
+							</div>
+						</div>
+					</div>
+					<div class="card" style="margin-left: -50px; width:650px;">
+						<div class="card-header" id="headingThree">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" data-toggle="collapse"
+									data-target="#collapseThree" aria-expanded="false"
+									aria-controls="collapseThree">
+									{{WhyUsObj.subtitle6}}
+								</button>
+							</h5>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+							data-parent="#accordion">
+							<div class="card-body">
+								{{WhyUsObj.content6}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1 style="color: white; font-size: 35px;"><b>{{WhyUsObj.Column_title2}}</b><span
+					style="font-size: 50px; font-weight: bold;"><b>↑</b></span></h1>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+
+
+
+
+{% endblock body %}
+{% block extra_js%}
+
+<script>
+	// Get all bullet text elements
+	const bulletTexts = document.querySelectorAll('.bullet-text');
+
+	// Add click event listeners to each bullet text
+	bulletTexts.forEach((bulletText) => {
+		bulletText.addEventListener('click', () => {
+			// Toggle active class on click to show/hide dropdown content
+			bulletText.classList.toggle('active');
+		});
+	});
+
+</script>
+<script>
+	var $element = $('.each-event, .title');
+	var $window = $(window);
+	$window.on('scroll resize', check_for_fade);
+	$window.trigger('scroll');
+	function check_for_fade() {
+		var window_height = $window.height();
+
+	$.each($element, function (event) {
+		var $element = $(this);
+		var element_height = $element.outerHeight();
+			var element_offset = $element.offset().top;
+			space = window_height - (element_height + element_offset - $(window).scrollTop());
+			if (space < 60) {
+				$element.addClass("non-focus");
+			} else {
+				$element.removeClass("non-focus");
+			}
+
+		});
+	};
+</script>
+<script>
+	// JavaScript to handle accordion behavior
+	$(document).ready(function () {
+	   $('.collapse').on('show.bs.collapse', function () {
+		  $('.collapse.show').not(this).collapse('hide');
+	   });
+	});
+</script>
+<script src="{% static "js/timeline.js" %}"></script>
+
+{% endblock extra_js %}

@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+{% if SliderObj %} 
+    <section>
+		<img src="{% static "images/b1.jpg" %}" width="100%" alt="Description of the image">
+    </section>
+{% endif %}
+
+
+    <section class="ftco-services ftco-no-pb">
+			<div class="container-wrap">
+				<div class="row no-gutters">
+		{% if HeadCard1Obj %}
+          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
+            <div class="media block-6 d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-teacher"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">{{HeadCard1Obj.title}}</h3>
+                <p>{{HeadCard1Obj.content|safe}}</p>
+              </div>
+            </div>      
+          </div>
+		  {% endif %}
+		  {% if HeadCard2Obj %}
+          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
+            <div class="media block-6 d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-reading"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">{{HeadCard2Obj.title}}</h3>
+                <p>{{HeadCard2Obj.content|safe}}</p>
+              </div>
+            </div>    
+          </div>
+		  {% endif %}
+		  {% if HeadCard3Obj %}
+          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
+            <div class="media block-6 d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-books"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">{{HeadCard3Obj.title}}</h3>
+                <p>{{HeadCard3Obj.content|safe}}</p>
+              </div>
+            </div>      
+          </div>
+		  {% endif %}
+		  {% if HeadCard4Obj %}
+          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
+            <div class="media block-6 d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-diploma"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">{{HeadCard4Obj.title}}</h3>
+                <p>{{HeadCard4Obj.content|safe}}</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+		{% endif %}
+			</div>
+		</section>
+
+
+		{% if KeyPointsObj %}
+		<section class="ftco-section ftco-no-pt ftc-no-pb">
+			<div class="container">
+				<div class="row d-flex">
+					<div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
+						<div class="img" style="background-image: url({{KeyPointsObj.img.url}}); border"></div>
+					</div>
+					<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
+          	<h2 class="mb-4">{{KeyPointsObj.title}}</h2>
+						<p>{{KeyPointsObj.description}}</p>
+						<div class="row mt-5">
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title1}}</h3>
+										<p>{{KeyPointsObj.content1|safe}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title2}}</h3>
+										<p>{{KeyPointsObj.content2|safe}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title3}}</h3>
+										<p>{{KeyPointsObj.content3|safe}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title4}}</h3>
+										<p>{{KeyPointsObj.content4|safe}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title5}}</h3>
+										<p>{{KeyPointsObj.content5|safe}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="services-2 d-flex">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
+									<div class="text pl-3">
+										<h3>{{KeyPointsObj.sub_title6}}</h3>
+										<p>{{KeyPointsObj.content6|safe}}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		{% endif %}
+
+		{% if AboutNITDObj %}
+		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{AboutNITDObj.bg_img.url}});" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-2 d-flex">
+    			<div class="col-md-6 align-items-stretch d-flex">
+    				<div class="img img-video d-flex align-items-center" style="background-image: url({{AboutNITDObj.img.url}});">
+    				</div>
+    			</div>
+          <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
+            <h2 class="mb-4">{{AboutNITDObj.title}}</h2>
+            <p>{{AboutNITDObj.content|safe}}</p>
+          </div>
+        </div>	
+    		<div class="row d-md-flex align-items-center justify-content-center">
+    			<div class="col-lg-12">
+    				<div class="row d-md-flex align-items-center">
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="{{AboutNITDObj.trainer_count}}">0</strong>
+		                <span>Experience Years</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="{{AboutNITDObj.students_count}}">0</strong>
+		                <span>Innovative Methods</span>
+		              </div>
+		            </div>
+		          </div>
+	          </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+    {% endif %}
+
+		<section class="ftco-section">
+			<div class="container-fluid px-4">
+				<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <h2 class="mb-4"><span>Our</span> Courses</h2>
+            <p>We offer courses in every field and specialized and experienced teachers of the respective subjects to provide hassel free education.</p>
+          </div>
+        </div>	
+				<div class="row">
+					{% for obj in CourseHomeObj %}
+					<div class="col-md-3 course ftco-animate">
+						<div class="img" style="background-image: url({{obj.img.url}});"></div>
+						<div class="text pt-4">
+							<h3><a href="#">{{obj.courseTitle}}</a></h3>
+							<p>{{obj.content|truncatechars:150|safe}}</p>
+							<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+								Apply Now
+							</button>
+						</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+
+    
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url({% static "images/bg_5.jpg" %});" data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row justify-content-end">
+    			<div class="col-md-6 py-5 px-md-5">
+    				<div class="py-md-5">
+					{% if RequestQuoteObj %}
+		          <div class="heading-section heading-section-white ftco-animate mb-5">
+		            <h2 class="mb-4">{{RequestQuoteObj.title}}</h2>
+		            <p>{{RequestQuoteObj.content|safe}}</p>
+		          </div>
+				  {% endif %}
+				  <form method='post' action="{% url 'get-a-quote' %}" class="appointment-form ftco-animate">
+					{% csrf_token %}
+					<div class="d-md-flex">
+						<div class="form-group">
+							<input type="text" class="form-control" name="name" placeholder="Your Name">
+						</div>
+						<div class="form-group ml-md-4">
+							<input type="text" class="form-control" name="email_id" placeholder="Email-Id">
+						</div>
+					</div>
+					<div class="d-md-flex">
+						<div class="form-group">
+							<input type="text" class="form-control" name="qualification" placeholder="Qualification">
+						</div>
+						<div class="form-group ml-md-4">
+							<input type="text" class="form-control" name="phone" placeholder="Phone">
+						</div>
+					</div>
+					<div class="d-md-flex">
+						<div class="form-group">
+							<textarea name="message" id="" cols="30" rows="2" class="form-control"
+								placeholder="Message"></textarea>
+						</div>
+						<div class="form-group ml-md-4">
+							<input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
+						</div>
+					</div>
+					{% if messages %}
+						{% for message in messages %}
+							<div class="alert alert-info">
+								{{ message }}
+							</div>
+						{% endfor %}
+					{% endif %}
+				</form>
+		          
+		    	
+    			</div>
+        </div>
+    	</div>
+    </section>
+    
+
+		
+
+		
+
+{% if GalleryObj %}
+	<section class="ftco-gallery">
+	<div class="container-wrap">
+		<div class="row no-gutters">
+				<div class="col-md-5 ftco-animate">
+					<a href="{{GalleryObj.img1.url}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static "images/b2.jpg" %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+						<span class="icon-instagram"></span>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="{{GalleryObj.img2.url}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static "images/g1.jpg" %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+						<span class="icon-instagram"></span>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-4 ftco-animate">
+					<a href="{{GalleryObj.img3.url}}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static "images/g2.jpg" %});">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+						<span class="icon-instagram"></span>
+					</div>
+					</a>
+				</div>
+	</div>
+	</div>
+</section>
+	{% endif %}
+	{% endblock body %}
+    

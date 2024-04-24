@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+
+
+{% endblock extra_css %}
+
+
+{% block body %}
+
+{% if HeadObj %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{HeadObj.bg_img.url}}');">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center">
+				<h1 class="mb-2 bread">Courses</h1>
+				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+								class="ion-ios-arrow-forward"></i></a></span> <span>Courses<i
+							class="ion-ios-arrow-forward"></i></span></p>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+<br><br>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<img src="{{CoursedetailsObj.img.url}}" height="400" width="500">
+			</div>
+			<div class="col">
+        <h2>{{CoursedetailsObj.courseTitle}}</h2>
+          <div class="row">
+            <div class="col-md-5">
+              <span><a href="#"><i class="icon-user mr-2"></i>{{CoursedetailsObj.trainerName}}</a></span>
+            </div>
+            <div class="col-md-7">
+              <span><a href="#"><i class="icon-calendar mr-2"></i>{{CoursedetailsObj.courseDuration}}</a></span>
+            </div>
+          </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Apply Now
+        </button>
+        <p align="justify">{{CoursedetailsObj.content|safe}}</p>
+			</div>
+		</div>
+		<div class="row">
+      <div class="col">
+        {{CoursedetailsObj.coursetopic|safe}}
+      </div>
+      <div class="col">
+        {{CoursedetailsObj.coursetech|safe}}
+      </div>
+      <div class="col-fluid">
+        <h3>Other Courses</h3>
+        {% for obj in CourseHomeObj %}
+        <div class="row">
+          <div class="col-md-4">
+            <li style="display: inline;"><img src="{{obj.img.url}}" width = "80" height =" 50" alt="Image 1"></li>
+          </div>
+          <div class="col-md-8">
+            <span><a href="{% url 'course_details' obj.id %}">{{obj.courseTitle}}</a></span>
+          </div>
+        </div><br>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+      
+{% endblock body %}
+
+
