@@ -1,0 +1,83 @@
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans+Condensed:300");
+
+.wrapper {
+  background-color: #fa9b64 ;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  font: normal 16px/26px Open Sans Condensed, sans-serif;
+  color: #1a1616;
+  padding: 100px 20px 200px;
+  box-sizing: border-box;
+}
+
+.block {
+  z-index: 1;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 5px;
+    background-color: #201d1d;
+    left: 50%;
+    margin-top: 80px;
+  }
+}
+
+.title {
+  font: bold 42px/52px Open Sans Condensed, sans-serif;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.8s ease-in-out;
+}
+
+.each-event {
+  background-color: #d3d2d2;
+  color: #0e0d0d;
+  padding: 15px;
+  margin: 60px 20px;
+  width: 450px;
+  position: relative;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  &:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 10px);
+    left: -27px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #181818;
+    box-shadow: 0 4px 20px -4px rgba(64, 64, 64, 0.8);
+  }
+  &:nth-child(odd) {
+    margin-left: calc(50% + 21px);
+  }
+  &:nth-child(even) {
+    margin-left: calc(50% - 475px);
+    &:before {
+      left: calc(100% + 14px);
+    }
+  }
+}
+
+.title.non-focus {
+  font-size: 24px;
+  line-height: 34px;
+  transition: all 0.8s ease-in-out;
+}
+
+.each-event.non-focus {
+  color: #0c0c0c;
+  background: #1a1919;
+  margin-top: 90px;
+  transform: rotateZ(45deg);
+  transition: all 0.8s ease-in-out;
+  &:before {
+    opacity: 0;
+    background-color: #aaa;
+  }
+}
